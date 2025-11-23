@@ -4,16 +4,14 @@
 repos:
   - repo: local
     hooks:
-      - id: ai-diff-guard
-        name: Prevent AI indicators in staged content
-        entry: .config/ai-hooks/ai_guard.py
+      - id: ai-pre-commit
+        name: Block AI indicators in staged files
+        entry: python3 .config/ai-hooks/ai_guard.py pre-commit
         language: system
-        args: [pre-commit]
         pass_filenames: false
-        stages: [pre-commit]
-      - id: ai-commit-msg-guard
-        name: Prevent AI indicators in commit messages
-        entry: .config/ai-hooks/ai_guard.py
+        stages: [commit]
+      - id: ai-commit-msg
+        name: Block AI indicators in commit messages
+        entry: python3 .config/ai-hooks/ai_guard.py commit-msg
         language: system
-        args: [commit-msg]
         stages: [commit-msg]
