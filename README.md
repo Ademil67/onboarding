@@ -17,7 +17,26 @@ You can make your account in any way that works for you, but here’s a simple m
 
 > Once you're finished, update your [status](https://forms.gle/SLXdJk3SbjHCYnpd9) and continue onto the the next step.
 
-## 2) Install AI Coding Tools
+## 2) Set Up Screen Recording Tool
+
+For this study, we’ll be using a custom screen recorder to capture your coding sessions. The tool helps you choose exactly which windows you’re comfortable sharing and records only high-signal activity related to your interactions.
+
+Please create a conda environment to set up the recording tool. This should be the same conda environment you use for setting up SpecStory.
+
+### Installation
+
+Please install and run the recorder from the following repository:
+https://github.com/jennjwang/swe-prod-recorder
+
+A visual walkthrough for the setup process is available [here](https://docs.google.com/document/d/1kcVAi28N4hAu_FuuRBffViv0rwcA2tny7jCBvH-0zyI/edit?tab=t.r88ylnapzh5a#heading=h.lmf23ws57a4n)
+
+### Storage Options
+
+Because screen recordings can take up a lot of storage (~300 mb per hour), we provide the option for your to upload recordings directly to your Google Drive. You can find the setup instructions [here](https://docs.google.com/document/d/1kcVAi28N4hAu_FuuRBffViv0rwcA2tny7jCBvH-0zyI/edit?tab=t.cqbysjja5sff).
+
+> Reminder to update your [completion status](https://forms.gle/SLXdJk3SbjHCYnpd9) once you have completed this step.
+
+## 3) Install AI Coding Tools
 
 You’ll use both Cursor and Claude Code during the study. For each tool, we provide (1) a setup guide for installation and configuration, and (2) a quickstart based on the official documentation that introduces key features and functionality.
 
@@ -41,25 +60,6 @@ To set up Claude Code, follow the instructions provided [here](https://docs.goog
 
 > Reminder to update your [status](https://forms.gle/SLXdJk3SbjHCYnpd9) once you have completed this step.
 
-## 3) Set Up Screen Recording Tool
-
-For this study, we’ll be using a custom screen recorder to capture your coding sessions. The tool helps you choose exactly which windows you’re comfortable sharing and records only high-signal activity related to your interactions.
-
-Please create a conda environment to set up the recording tool. This should be the same conda environment you use for setting up SpecStory.
-
-### Installation
-
-Please install and run the recorder from the following repository:
-https://github.com/jennjwang/swe-prod-recorder
-
-A visual walkthrough for the setup process is available [here](https://docs.google.com/document/d/1kcVAi28N4hAu_FuuRBffViv0rwcA2tny7jCBvH-0zyI/edit?tab=t.r88ylnapzh5a#heading=h.lmf23ws57a4n)
-
-### Storage Options
-
-Because screen recordings can take up a lot of storage (~300 mb per hour), we provide the option for your to upload recordings directly to your Google Drive. You can find the setup instructions [here](https://docs.google.com/document/d/1kcVAi28N4hAu_FuuRBffViv0rwcA2tny7jCBvH-0zyI/edit?tab=t.cqbysjja5sff).
-
-> Reminder to update your [completion status](https://forms.gle/SLXdJk3SbjHCYnpd9) once you have completed this step.
-
 ## 4) Install AI Usage Logger (SpecStory)
 
 We’ll also be tracking your AI usage as part of this study. [SpecStory](https://specstory.com/) is a Cursor extension and CLI tool that automatically records your AI-assisted coding activity as local Markdown files.
@@ -79,7 +79,7 @@ Verify that SpecStory is logging correctly by running a short AI interaction and
 
 > Reminder to update your [status](https://forms.gle/SLXdJk3SbjHCYnpd9) once you have completed this step.
 
-## 5) Install AI Guard Hooks
+## 5) Install Git Hooks
 
 We provide a `pre-commit` configuration that blocks explicit AI indicators in both your staged changes and commit messages. The guard looks for tool names (Claude, Cursor, Copilot, Gemini, etc.), phrases such as “ai-generated,” and co-authorship markers so reviewers stay blinded to AI usage.
 
