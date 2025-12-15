@@ -12,17 +12,19 @@ const defaults = JSON.parse(
 );
 
 export function convert(type, value, from, to) {
+  const numValue = Number(value);
+  if (!Number.isFinite(numValue)) {
+    throw new Error("Invalid numeric value provided");
+  }
+  const round = (v) => Math.round(v * Math.pow(10, defaults.precision)) / Math.pow(10, defaults.precision);
+  
   switch (type) {
     case "temperature":
-      return temperature.convertTemperature(
-        value,
-        from || defaults.temperature.defaultFrom,
-        to || defaults.temperature.defaultTo
-      );
+      return round(temperature.convertTemperature(numValue, from || defaults.temperature.defaultFrom, to || defaults.temperature.defaultTo));
     case "distance":
-      return distance.convertDistance(value, from, to);
+      return round(distance.convertDistance(numValue, from, to));
     case "weight":
-      return weight.convertWeight(value, from, to);
+      return round(weight.convertWeight(numValue, from, to));
     default:
       throw new Error("Unknown type " + type);
   }

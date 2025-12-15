@@ -1,5 +1,7 @@
 export function convertWeight(value, from, to) {
-  if (from === "g" && to === "oz") return value / 28.3495;
-  if (from === "oz" && to === "g") return value * 28.3495;
+  const g = value * (from === "oz" ? 28.3495 : from === "lb" ? 453.592 : 1);
+  if (to === "g") return g;
+  if (to === "oz") return g / 28.3495;
+  if (to === "lb") return g / 453.592;
   throw new Error(`Unsupported weight conversion: ${from} to ${to}`);
 }
